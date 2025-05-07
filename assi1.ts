@@ -46,7 +46,7 @@
       console.log("With Reduce", filterByRating(books));
 
     // OR.....
-    
+
     // task 2 start with filter ***************
     function filterByRating2(product: Product[]):Product[]{
         const result = product.filter(item => item.rating >= 4)
@@ -72,6 +72,41 @@
     // task 3 end ***************
 
 
+    
+
+
+    // task 4 start ***************
+    class Vehicle {
+        constructor(public make: string, public year: number){
+
+        }
+        getInfo(){
+            console.log(`Make: ${this.make}, Year: ${this.year}`);
+        }
+    }
+
+    class Car extends Vehicle{
+        constructor(make: string, year: number, public model: string){
+            super(make, year)
+        }
+        getModel(){
+            console.log(`Model: ${this.model}`);
+        }
+
+    }
+    const myCar = new Car("Toyota", 2020, "Corolla");
+    myCar.getInfo();   // Output: "Make: Toyota, Year: 2020"
+    myCar.getModel();  // Output: "Model: Corolla"
+        // task 4 End ***************
+
+
+
+
+
+    // task 5 start ***************
+    
+    // task 5 End ***************
+
 
 
 
@@ -79,10 +114,3 @@
 
 
 }
-
-
-/* if(typeof input === 'string'){
-    if(booleanValue){
-     return input.toUpperCase()
-    }           
- } */
