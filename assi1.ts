@@ -26,26 +26,24 @@
         { title: "Book F", rating: 5.3 },
       ];
 
-
-    type Book = {
-        title: string;
-        rating: number;
-    };
-
-    function filterByRating(books: Book[]): Book[]{
-        return books.reduce((acc: Book[], book: Book) =>{
-            if(book.rating >= 4){
-                acc.push(book)
+    function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[]{
+        return items.reduce((acc: { title: string; rating: number }[], item: { title: string; rating: number }) =>{
+            if(item.rating >= 4){
+                acc.push(item)
             }
             return acc;
         }, [])
     }
     //   console.log("With Reduce", filterByRating(books));
 
-    // OR............
-    // task 2 start with filter ***************
-    function filterByRating2(books: Book[]):Book[]{
-        const result = books.filter(book => book.rating >= 4)
+    // OR............   ---OPTIONAL---
+    // task 2 start with filter ***************    
+    type Book = {
+        title: string;
+        rating: number;
+    };
+    function filterByRating2(items: Book[]): Book[]{
+        const result = items.filter(item => item.rating >= 4)
         return result;
     }
     // console.log("With filter", filterByRating2(books));
@@ -201,11 +199,5 @@
     // squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
 
     // task 8 End ***************
-
-
-
-
-
-
 
 }
