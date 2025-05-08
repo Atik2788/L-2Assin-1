@@ -100,3 +100,53 @@ type PersonKeys = keyof Person;
 const key1: PersonKeys = "name";       // ✅ 
 const key2: PersonKeys = "isStudent";  // ✅ 
 const key3: PersonKeys = "address";    // ❌ 
+```
+</br>
+</br>
+
+## 3. Provide an example of using union and intersection types in TypeScript.
+
+<strong>Union Type ( | )</strong></br>
+Union type is used when a variable receives more than one type. That means the variable will be this type or that type.
+
+```ts
+function printValue(value: string | number) {
+  if (typeof value === "string") {
+    console.log("string:", value.toUpperCase());
+  } else {
+    console.log("number:", value*value);
+  }
+}
+
+printValue("atik");    // output: string: ATIK
+printValue(3.1416);   // output: number: 25
+```
+</br>
+<strong>Intersection Type (&) ( | )</strong></br>
+Intersection type is used when a user want his variable contain many types in one time. That means the variable will combine this type and that type.
+
+```ts
+type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = {
+  employeeId: number;
+  department: string;
+};
+
+type Staff = Person & Employee;
+
+const staffMember: Staff = {
+  name: "Shanta",
+  age: 28,
+  employeeId: 1001,
+  department: "Development"
+};
+
+console.log(staffMember);
+```
+
+
+
