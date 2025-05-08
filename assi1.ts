@@ -1,20 +1,17 @@
 {
     // task 1 start ***************
-    function formatString(input: string, booleanValue?:boolean){   
-        if(booleanValue === false){
+    function formatString(input: string, toUpper?:boolean): string{   
+        if(toUpper === false){
             return input.toLocaleLowerCase()
-        }
-        else if(booleanValue){
-            return input.toUpperCase()
         }
         else{
             return input.toUpperCase()
         }
     }   
 
-    console.log(formatString("Hello"));
-    console.log(formatString("Jello", true));
-    console.log(formatString("Mairallo", false));
+    // console.log(formatString("Hello"));
+    // console.log(formatString("Jello", true));
+    // console.log(formatString("Mairallo", false));
     // task 1 end ***************
 
 
@@ -30,29 +27,28 @@
       ];
 
 
-    type Product = {
+    type Book = {
         title: string;
         rating: number;
     };
 
-    function filterByRating(product: Product[]): Product[]{
-        return product.reduce((acc: Product[], product: Product) =>{
-            if(product.rating >= 4){
-                acc.push(product)
+    function filterByRating(books: Book[]): Book[]{
+        return books.reduce((acc: Book[], book: Book) =>{
+            if(book.rating >= 4){
+                acc.push(book)
             }
             return acc;
         }, [])
     }
-      console.log("With Reduce", filterByRating(books));
+    //   console.log("With Reduce", filterByRating(books));
 
-    // OR.....
-
+    // OR............
     // task 2 start with filter ***************
-    function filterByRating2(product: Product[]):Product[]{
-        const result = product.filter(item => item.rating >= 4)
+    function filterByRating2(books: Book[]):Book[]{
+        const result = books.filter(book => book.rating >= 4)
         return result;
     }
-    console.log("With filter", filterByRating2(books));
+    // console.log("With filter", filterByRating2(books));
     // task 2 end ***************
 
 
@@ -67,8 +63,8 @@
        return result
     }
 
-    console.log(concatenateArrays(["a", "b"], ["c"]));       // Output: ["a", "b", "c"]
-    console.log(concatenateArrays([1, 2], [3, 4], [5]));     // Output: [1, 2, 3, 4, 5]
+    // console.log(concatenateArrays(["a", "b"], ["c"]));       // Output: ["a", "b", "c"]
+    // console.log(concatenateArrays([1, 2], [3, 4], [5]));     // Output: [1, 2, 3, 4, 5]
     // task 3 end ***************
 
 
@@ -95,8 +91,8 @@
 
     }
     const myCar = new Car("Toyota", 2020, "Corolla");
-    myCar.getInfo();   // Output: "Make: Toyota, Year: 2020"
-    myCar.getModel();  // Output: "Model: Corolla"
+    // myCar.getInfo();   // Output: "Make: Toyota, Year: 2020"
+    // myCar.getModel();  // Output: "Model: Corolla"
         // task 4 End ***************
 
 
@@ -104,8 +100,51 @@
 
 
     // task 5 start ***************
-    
+
+    function processValue(value: string | number): number {
+        if (typeof value === "string") {
+            const result = value.length;
+            console.log(result);
+            return result
+        }
+        else{
+           const result =  value * 2
+           console.log(result);
+           return result
+        }       
+    }
+
+    processValue("helloaaaa");
+    processValue(10);
+    console.log(processValue('Next Lavel Web Development'))    
     // task 5 End ***************
+
+
+
+
+
+    // task 6 Start ***************
+    const products = [
+        { name: "Pen", price: 10 },
+        { name: "Notebook", price: 25 },
+        { name: "Bag", price: 50 }
+      ];
+
+    interface Product {
+        name: string;
+        price: number;
+      }
+      
+      function getMostExpensiveProduct(products: Product[]): Product | null{
+        return products.reduce((acc: Product[], product: Product) =>{
+            if(product.price > acc.price)
+        }, [])
+        return acc;
+      }
+
+      getMostExpensiveProduct(products); // Output: { name: "Bag", price: 50 }
+ 
+    // task 6 End ***************
 
 
 
