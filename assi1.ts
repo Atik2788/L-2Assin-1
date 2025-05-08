@@ -197,8 +197,8 @@
         })
     }
 
-    squareAsync(4).then(console.log);        // Output after 1s: 16
-    squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
+    // squareAsync(4).then(console.log);        // Output after 1s: 16
+    // squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
 
     // task 8 End ***************
 
