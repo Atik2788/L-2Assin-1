@@ -114,9 +114,9 @@
         }       
     }
 
-    processValue("helloaaaa");
-    processValue(10);
-    console.log(processValue('Next Lavel Web Development'))    
+    // processValue("helloaaaa");
+    // processValue(10);
+    // console.log(processValue('Next Lavel Web Development'))    
     // task 5 End ***************
 
 
@@ -150,7 +150,7 @@
 
       }
      const expensivProduct = getMostExpensiveProduct(products); // Output: { name: "Bag", price: 50 }
-     console.log(expensivProduct);
+    //  console.log(expensivProduct);
     // task 6 End ***************
 
 
@@ -169,8 +169,38 @@
         Sunday
       }
       
-      function getDayType(day: Day): string
+      function getDayType(day: Day): string{
+        if(day === Day.Saturday || day === Day.Sunday){
+            return "Weekend"
+        }
+        else{
+            return "Weekday"
+        }
+      }
+    //   console.log(getDayType(Day.Saturday));   // Output: "Weekend"
+    //   console.log(getDayType(Day.Monday));   // Output: "Weekday"
+    //     console.log(getDayType(Day.Sunday));   // Output: "Weekend"
     // task 7 End ***************
+
+
+
+
+    // task 8 Start ***************
+    async function squareAsync(n: number): Promise<number>{
+        if(n < 0){
+            throw new Error("Negative number not allowed")
+        }
+        return new Promise((resolve) =>{
+            setTimeout(() =>{
+                resolve (n * n);
+            }, 1000)
+        })
+    }
+
+    squareAsync(4).then(console.log);        // Output after 1s: 16
+    squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
+
+    // task 8 End ***************
 
 
 
