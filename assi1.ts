@@ -134,17 +134,43 @@
         name: string;
         price: number;
       }
-      
-      function getMostExpensiveProduct(products: Product[]): Product | null{
-        return products.reduce((acc: Product[], product: Product) =>{
-            if(product.price > acc.price)
-        }, [])
-        return acc;
-      }
 
-      getMostExpensiveProduct(products); // Output: { name: "Bag", price: 50 }
- 
+
+      function getMostExpensiveProduct(products: Product[]): Product | null{
+        if(!products || products.length === 0){
+            return null;
+        }
+
+        return products.reduce((acc, product) =>{
+            if ( acc.price < product.price){
+                  return product
+            }
+            return acc
+        }, products[0])
+
+      }
+     const expensivProduct = getMostExpensiveProduct(products); // Output: { name: "Bag", price: 50 }
+     console.log(expensivProduct);
     // task 6 End ***************
+
+
+
+
+
+
+    // task 7 Start  ***************
+    enum Day {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+      }
+      
+      function getDayType(day: Day): string
+    // task 7 End ***************
 
 
 
