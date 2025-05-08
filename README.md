@@ -139,10 +139,10 @@ type Employee = {
 type Staff = Person & Employee;
 
 const staffMember: Staff = {
-  name: "Shanta",
-  age: 28,
+  name: "Khalid Bin Walid",
+  age: 45,
   employeeId: 1001,
-  department: "Development"
+  department: "Warrior"
 };
 
 console.log(staffMember);
